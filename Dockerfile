@@ -88,6 +88,8 @@ COPY [ "./src/home/config/xfce4/panel", "./.config/xfce4/panel/" ]
 COPY [ "./src/home/config/xfce4/xfconf/xfce-perchannel-xml", "./.config/xfce4/xfconf/xfce-perchannel-xml/" ]
 COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
+RUN apt-get install sudo
+
 ### Fix permissions
 RUN \
     chmod a+wx "${STARTUPDIR}"/version_sticker.sh \
