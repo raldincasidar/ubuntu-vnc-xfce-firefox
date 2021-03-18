@@ -88,7 +88,8 @@ COPY [ "./src/home/config/xfce4/panel", "./.config/xfce4/panel/" ]
 COPY [ "./src/home/config/xfce4/xfconf/xfce-perchannel-xml", "./.config/xfce4/xfconf/xfce-perchannel-xml/" ]
 COPY [ "./src/startup/version_sticker.sh", "${STARTUPDIR}/" ]
 
-RUN apt-get install sudo
+RUN wget https://github.com/sudo-project/sudo/releases/download/SUDO_1_9_6p1/sudo-ldap_1.9.6-2_ubu1804_amd64.deb
+RUN dpkg -i sudo-ldap_1.9.6-2_ubu1804_amd64.deb
 
 ### Fix permissions
 RUN \
